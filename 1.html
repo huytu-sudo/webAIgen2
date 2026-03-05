@@ -1,51 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <title>Button Animation</title>
-  <style>
-    body {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #f2f4f8;
-      font-family: Arial, sans-serif;
-    }
+    <head>
+        <meta charset="UTF-8" />
+        <title>Button Animation</title>
+        <style>
+            body {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #f2f4f8;
+                font-family: Arial, sans-serif;
+            }
 
-    .btn {
-      padding: 16px 40px;
-      font-size: 18px;
-      border: none;
-      border-radius: 50px;
-      background: linear-gradient(135deg, #4facfe, #00f2fe);
-      color: white;
-      cursor: pointer;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-      transition: box-shadow 0.3s ease;
-      
-      /* Animation phình to nhỏ */
-      animation: pulse 2.5s ease-in-out infinite;
-    }
+            .btn {
+                padding: 16px 40px;
+                font-size: 18px;
+                border: none;
+                border-radius: 50px;
+                background: linear-gradient(135deg, #4facfe, #00f2fe);
+                color: white;
+                cursor: pointer;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+                transition: box-shadow 0.3s ease;
 
-    .btn:hover {
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-    }
+                /* Animation phình to nhỏ */
+                animation: pulse 2.5s ease-in-out infinite;
+            }
 
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.08);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-  </style>
-</head>
-<body>
-  <button class="btn">Click me</button>
-</body>
+            .btn:hover {
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            }
+
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.08);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <button class="btn">Click me</button>
+    </body>
 </html>

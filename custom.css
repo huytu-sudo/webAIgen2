@@ -1,0 +1,11 @@
+.dragScroll {
+    overflow-x: scroll !important;
+    width: 100%;
+    scrollbar-width: thin !important;
+}
+
+#cell_6,
+#cell_7,
+#cell_8 {
+    min-height: 98px !important;
+}
