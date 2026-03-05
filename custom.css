@@ -7,5 +7,103 @@
 #cell_6,
 #cell_7,
 #cell_8 {
-    min-height: 98px !important;
+    min-height: 122px  !important;
+}
+#Navigation_Links_1{
+    margin-left: 60px !important;
+} 
+
+.desktop-header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.mobile_header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  background: #00539f;
+  display: flex;
+  justify-content: center; /* logo giữa */
+  align-items: center;
+  color: white;
+  z-index: 1000;
+}
+
+.menu-icon {
+  position: absolute;
+  right: 20px;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+}
+
+/* 3 gạch hamburger */
+.bar {
+  display: block;
+  width: 80%;
+  height: 2px;
+  background: white;
+  margin: 5px 0;
+}
+
+/* 2 thanh dấu X */
+.close-line {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: white;
+  display: none;
+}
+
+.close-line:nth-child(4) {
+  transform: rotate(45deg);
+}
+
+.close-line:nth-child(5) {
+  transform: rotate(-45deg);
+}
+
+/* Khi active → ẩn 3 gạch, hiện X */
+.menu-icon.active .bar {
+  display: none;
+}
+
+.menu-icon.active .close-line {
+  display: block;
+}
+
+/* ========================= */
+/* FULL SCREEN MENU */
+/* ========================= */
+.full-menu {
+  position: fixed;
+  top: 45px; /* dưới header */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 45px);
+  background: white; /* nền mặc định trắng */
+  display: none;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.full-menu.active {
+  display: block;
+}
+
+.full-menu a {
+  display: block;
+  padding: 15px 0;
+  text-decoration: none;
+  color: #333;
+  font-size: 20px;
+  border-bottom: 1px solid #eee;
 }
