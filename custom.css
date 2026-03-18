@@ -1,17 +1,18 @@
 .dragScroll {
-    overflow-x: scroll !important;
-    width: 100%;
-    scrollbar-width: thin !important;
+  overflow-x: scroll !important;
+  width: 100%;
+  scrollbar-width: thin !important;
 }
 
 #cell_6,
 #cell_7,
 #cell_8 {
-    min-height: 122px  !important;
+  min-height: 122px !important;
 }
-#Navigation_Links_1{
-    margin-left: 60px !important;
-} 
+
+#Navigation_Links_1 {
+  margin-left: 60px !important;
+}
 
 .desktop-header {
   position: fixed !important;
@@ -29,10 +30,12 @@
   height: 45px;
   background: #00539f;
   display: flex;
-  justify-content: center; /* logo giữa */
+  justify-content: center;
+  /* logo giữa */
   align-items: center;
   color: white;
   z-index: 1000;
+  box-sizing: border-box;
 }
 
 .menu-icon {
@@ -85,14 +88,17 @@
 /* ========================= */
 .full-menu {
   position: fixed;
-  top: 45px; /* dưới header */
+  top: 45px;
+  /* dưới header */
   left: 0;
   width: 100%;
   height: calc(100vh - 45px);
-  background: white; /* nền mặc định trắng */
+  background: white;
+  /* nền mặc định trắng */
   display: none;
   padding: 20px;
   box-sizing: border-box;
+  overflow-y: auto;
 }
 
 .full-menu.active {
@@ -104,6 +110,248 @@
   padding: 15px 0;
   text-decoration: none;
   color: #333;
-  font-size: 20px;
+  font-size: clamp(15px, 4vw, 20px);
   border-bottom: 1px solid #eee;
+}
+
+/* ===================================
+   FIX 320px — Lỗi 1: Frame width cứng 360px
+   =================================== */
+#Frame_427322420 {
+  width: 100% !important;
+  max-width: 360px !important;
+  height: auto !important;
+}
+
+/* ===================================
+   FIX 320px — Lỗi 2: Scholarship box tràn khỏi parent có padding
+   =================================== */
+#Frame_427322469 {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* ===================================
+   FIX 320px — Lỗi 3: Bảng min-width 560px gây body scroll
+   =================================== */
+#Frame_427322424_1 {
+  overflow: hidden !important;
+}
+
+#Frame_427322462_1 {
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ===================================
+   FIX 320px — Lỗi 4: Logo slider kéo body
+   =================================== */
+#Frame_1293,
+#Frame_427322417 {
+  overflow: hidden !important;
+  max-width: 100vw !important;
+}
+
+.logo-slider {
+  overflow: visible;
+  /* slider tự scroll bên trong container */
+}
+
+/* Chặn overflow toàn body trên mobile */
+@media (max-width: 480px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  #Frame_427322419_0 {
+    height: auto !important;
+  }
+
+  #mobile {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  /* Navigation Links desktop không được hiện trên mobile */
+  #Navigation_Links_1 {
+    margin-left: 0 !important;
+  }
+}
+
+@media (max-width: 320px) {
+
+  #_13385_3565,
+  #_13385_3565 span,
+  #_13385_3578,
+  #_13385_3578 span,
+  #_13385_3605,
+  #_13385_3605 span {
+    width: auto !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+
+  #Generated_autolayout,
+  #Generated_autolayout_0,
+  #Generated_autolayout_1 {
+    padding: 6px 10px !important;
+    margin: 0 !important;
+  }
+
+  #Polygon_1,
+  #Polygon_1_0,
+  #Polygon_1_1 {
+    margin: 0 !important;
+  }
+
+  #l_tr_nh {
+    padding: 32px 12px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    height: auto !important;
+    flex-wrap: wrap !important;
+  }
+
+  #l_tr_nh span,
+  .text,
+  span.text {
+    white-space: normal !important;
+  }
+
+  #Frame_1707486916 {
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+
+  #_13385_3569,
+  #_13385_3569 span,
+  #_13385_3580,
+  #_13385_3580 span,
+  #_13385_3607,
+  #_13385_3607 span {
+    width: auto !important;
+    white-space: normal !important;
+  }
+
+  #Frame_1707486882,
+  #Frame_1707486882_0,
+  #Frame_1707486882_1 {
+    height: auto !important;
+    min-height: 160px !important;
+  }
+}
+
+/* ===================================
+   STICKY BOTTOM BAR — 2 buttons mobile
+   "Gọi hotline" (outline) + "Đăng ký tư vấn" (solid red)
+   Hiển thị trên mobile, ẩn trên tablet/desktop
+   =================================== */
+.mobile-sticky-bottom {
+  display: none;
+  /* ẩn mặc định, chỉ hiện trên mobile */
+}
+
+@media (max-width: 1199px) {
+  #Frame_1292 {
+    flex-flow: column !important;
+    overflow: visible !important;
+    padding-bottom: 40px !important;
+  }
+
+  #Frame_427322420 {
+    width: 100% !important;
+    max-width: 360px !important;
+    height: 388px !important;
+    flex-shrink: 0 !important;
+    position: relative !important;
+    z-index: 0 !important;
+  }
+
+  #Frame_427322419 {
+    position: relative !important;
+    z-index: 1 !important;
+    width: 100% !important;
+  }
+  
+  .mobile-sticky-bottom {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9998;
+    background: #00539f;
+    padding: 10px 16px;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom));
+    /* tránh notch iPhone */
+    gap: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .sticky-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px 8px;
+    border-radius: 24px;
+    font-family: 'SVN-Apercu Pro', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: normal;
+    /* Cho phép chữ rớt dòng nếu màn quá hẹp */
+    text-align: center;
+    transition: opacity 0.2s;
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 360px) {
+    .mobile-sticky-bottom {
+      padding: 10px 8px;
+      gap: 8px;
+    }
+
+    .sticky-btn {
+      font-size: 13px;
+      padding: 8px 6px;
+      gap: 4px;
+    }
+  }
+
+  .sticky-btn:active {
+    opacity: 0.8;
+  }
+
+  /* Button trái: outline trắng — "Gọi hotline" */
+  .sticky-btn--outline {
+    background: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+  }
+
+  .sticky-btn--outline svg path {
+    fill: #ffffff;
+  }
+
+  /* Button phải: đỏ solid — "Đăng ký tư vấn" */
+  .sticky-btn--solid {
+    background: #ed1941;
+    border: 2px solid #ed1941;
+    color: #ffffff;
+  }
+
+  /* Đẩy footer page lên để không bị che bởi sticky bar (~60px) */
+  #Frame_894,
+  #mobile {
+    margin-bottom: 30px !important;
+    box-sizing: border-box !important;
+  }
 }
